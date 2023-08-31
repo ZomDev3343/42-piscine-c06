@@ -6,7 +6,7 @@
 /*   By: truello <thomasdelan2@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 14:32:24 by truello           #+#    #+#             */
-/*   Updated: 2023/08/31 15:23:42 by truello          ###   ########.fr       */
+/*   Updated: 2023/08/31 15:26:26 by truello          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	is_ascii_first(char *s1, char *s2)
 	i = 0;
 	while ((s1[i] == s2[i]) && (s1[i] || s2[i]))
 		i++;
-	if (s1[i] < s2[i])
+	if (s1[i] <= s2[i])
 		return (1);
 	else
 		return (0);
@@ -44,7 +44,7 @@ int	main(int argc, char **argv)
 	i = 1;
 	while (i < argc)
 	{
-		j = i;
+		j = 0;
 		while (j < i)
 		{
 			if (is_ascii_first(argv[j + 1], argv[j]))
@@ -59,9 +59,6 @@ int	main(int argc, char **argv)
 	}
 	i = 1;
 	while (i < argc)
-	{
-		ft_putstr(argv[i]);
-		i++;
-	}
+		ft_putstr(argv[i++]);
 	return (0);
 }
